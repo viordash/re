@@ -53,11 +53,13 @@ static int encode_entry(struct re_printf *pf, const struct odict_entry *e)
 		break;
 
 	case ODICT_STRING:
-		err = re_hprintf(pf, "\"%H\"", utf8_encode, odict_entry_str(e));
+		err = re_hprintf(pf, "\"%H\"", utf8_encode,
+				 odict_entry_str(e));
 		break;
 
 	case ODICT_BOOL:
-		err = re_hprintf(pf, "%s", odict_entry_boolean(e) ? "true" : "false");
+		err = re_hprintf(pf, "%s",
+				 odict_entry_boolean(e) ? "true" : "false");
 		break;
 
 	case ODICT_NULL:
@@ -65,7 +67,8 @@ static int encode_entry(struct re_printf *pf, const struct odict_entry *e)
 		break;
 
 	default:
-		re_fprintf(stderr, "json: unsupported type %d\n", odict_entry_type(e));
+		re_fprintf(stderr, "json: unsupported type %d\n",
+			   odict_entry_type(e));
 		err = EINVAL;
 	}
 

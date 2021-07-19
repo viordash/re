@@ -45,7 +45,7 @@ struct odict *odict_get_array(const struct odict *o, const char *key)
 
 struct odict *odict_entry_object(const struct odict_entry *e)
 {
-	if(!e || e->type != ODICT_OBJECT )
+	if (!e || e->type != ODICT_OBJECT )
 		return NULL;
 
 	return e->u.odict;
@@ -53,7 +53,7 @@ struct odict *odict_entry_object(const struct odict_entry *e)
 
 struct odict *odict_entry_array(const struct odict_entry *e)
 {
-	if(!e || e->type != ODICT_ARRAY)
+	if (!e || e->type != ODICT_ARRAY)
 		return NULL;
 
 	return e->u.odict;
@@ -62,7 +62,7 @@ struct odict *odict_entry_array(const struct odict_entry *e)
 
 char *odict_entry_str(const struct odict_entry *e)
 {
-	if(!e || e->type != ODICT_STRING)
+	if (!e || e->type != ODICT_STRING)
 		return NULL;
 
 	return e->u.str;
@@ -71,7 +71,7 @@ char *odict_entry_str(const struct odict_entry *e)
 
 int64_t odict_entry_int(const struct odict_entry *e)
 {
-	if(!e || e->type != ODICT_INT)
+	if (!e || e->type != ODICT_INT)
 		return 0;
 
 	return e->u.integer;
@@ -80,7 +80,7 @@ int64_t odict_entry_int(const struct odict_entry *e)
 
 double odict_entry_dbl(const struct odict_entry *e)
 {
-	if(!e || e->type != ODICT_DOUBLE)
+	if (!e || e->type != ODICT_DOUBLE)
 		return 0.0;
 
 	return e->u.dbl;
@@ -89,7 +89,7 @@ double odict_entry_dbl(const struct odict_entry *e)
 
 bool odict_entry_boolean(const struct odict_entry *e)
 {
-	if(!e || e->type != ODICT_BOOL)
+	if (!e || e->type != ODICT_BOOL)
 		return false;
 
 	return e->u.boolean;
@@ -109,7 +109,7 @@ const char *odict_entry_key(const struct odict_entry *e)
 {
 	if (!e)
 		return NULL;
-	
+
 	return e->key;
 }
 
